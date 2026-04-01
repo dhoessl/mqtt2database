@@ -9,6 +9,11 @@ from mqtt2database.mqtt.core import MqttClient
 
 
 class DatabaseMqttController(MqttClient):
+    """ Class to run a Mqtt Client setting new data in database and serving
+    Requests to this database values.
+    The moment a new value is set in the database it also gets send to clients
+    listening for requests.
+    """
     def __init__(self, run_forever: bool = False) -> None:
         super().__init__()
         self.runforever = run_forever
